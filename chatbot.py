@@ -81,11 +81,11 @@ if __name__ == '__main__':
     # ... - passar no teste de turing...
 
     chatbot = make_regex_chatbot({
-        r'oi, tudo bem\?': oneof(
+        r'oi, tudo bem\??\.?': oneof(
             'tudo bem!', 
             'sim, e com você?'
         ),
-        r'qual o seu nome\?': cte('Bot-o'),
+        r'qual o seu nome\?\.?': cte('Bot-o'),
         r'meu nome é (?P<name>\w*)\.?': (
             lambda match: 'oi {name}'.format(**match.groupdict())
         ),
